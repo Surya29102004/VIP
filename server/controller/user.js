@@ -11,9 +11,7 @@ export const loginUser = TryCatch(async (req, res) => {
 
   const otp = Math.floor(Math.random() * 1000000);
 
-  const prevOtp = await OTP.findOne({
-    email,
-  });
+  const prevOtp = await OTP.findOne({ email});
 
   if (prevOtp) {
     await prevOtp.deleteOne();

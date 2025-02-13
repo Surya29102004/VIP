@@ -23,6 +23,7 @@ const Login = () => {
 
   const submitHandler = () => {
     loginUser(email, navigate);
+    console.log(email)
   };
   return (
     <div className="min-h-[60vh]">

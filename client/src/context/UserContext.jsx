@@ -13,15 +13,19 @@ export const UserProvider = ({ children }) => {
   const [isAuth, setIsAuth] = useState(false);
 
   async function loginUser(email, navigate) {
+    console.log(email)
     setBtnLoading(true);
     try {
       const { data } = await axios.post(`${server}/api/user/login`, { email });
+
+      // console.log(data)
 
       toast.success(data.message);
       localStorage.setItem("email", email);
       navigate("/verify");
       setBtnLoading(false);
     } catch (error) {
+      // console.log(error)
       toast.error(error.response.data.message);
       setBtnLoading(false);
     }
