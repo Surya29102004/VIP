@@ -6,6 +6,9 @@ import jwt from "jsonwebtoken";
 
 export const loginUser = TryCatch(async (req, res) => {
   const { email } = req.body;
+  console.log("WORKING")
+
+    console.log(req.body)
 
   const subject = "Ecommerce App";
 
@@ -16,6 +19,8 @@ export const loginUser = TryCatch(async (req, res) => {
   if (prevOtp) {
     await prevOtp.deleteOne();
   }
+
+
 
   await sendOtp({ email, subject, otp });
 

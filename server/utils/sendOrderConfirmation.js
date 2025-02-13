@@ -11,8 +11,8 @@ const sendOrderConfirmation = async ({
     host: "smtp.gmail.com",
     port: 465,
     auth: {
-      user: process.env.Gmail,
-      pass: process.env.Password,
+      user: process.env.EMAIL,
+      pass: process.env.PASSWORD,
     },
   });
 
@@ -102,7 +102,7 @@ const sendOrderConfirmation = async ({
 </html>`;
 
   await transport.sendMail({
-    from: process.env.Gmail,
+    from: process.env.EMAIL,
     to: email,
     subject,
     html,

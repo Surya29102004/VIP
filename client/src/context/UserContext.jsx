@@ -13,7 +13,7 @@ export const UserProvider = ({ children }) => {
   const [isAuth, setIsAuth] = useState(false);
 
   async function loginUser(email, navigate) {
-    console.log(email)
+    // console.log(email)
     setBtnLoading(true);
     try {
       const { data } = await axios.post(`${server}/api/user/login`, { email });
