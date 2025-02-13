@@ -22,7 +22,7 @@ cloudinary.v2.config({
 
 const app = express();
 
-const url = `http://localhost:4000`;
+const url = `https://suyash-server.onrender.com`;
 const interval = 30000;
 
 function reloadWebsite() {
